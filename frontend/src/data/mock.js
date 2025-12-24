@@ -164,8 +164,8 @@ export const services = [
   },
   {
     id: 3,
-    title: "Motion Graphics",
-    description: "Dynamic animations, titles, and visual effects that captivate.",
+    title: "Visual Effects",
+    description: "Dynamic visual effects and compositing that captivate audiences.",
     icon: "Sparkles"
   },
   {
