@@ -1,18 +1,18 @@
 // Mock data for Video Editor Portfolio
 
 export const editorProfile = {
-  name: "Marcus Chen",
-  title: "Senior Video Editor & Motion Designer",
+  name: "Samer Hanna",
+  title: "Professional Video Editor",
   tagline: "Crafting visual stories that move audiences",
-  bio: "Award-winning video editor with 8+ years of experience in commercial, documentary, and narrative filmmaking. Specializing in dynamic storytelling through seamless edits and captivating motion design.",
-  email: "hello@marcuschen.film",
-  phone: "+1 (555) 123-4567",
-  location: "Los Angeles, CA",
+  bio: "Award-winning video editor with experience in commercial, documentary, and narrative filmmaking. Specializing in dynamic storytelling through seamless edits and captivating visuals.",
+  email: "samerhanna001@gmail.com",
+  phone: "0991764695",
+  location: "Syria",
   social: {
-    vimeo: "https://vimeo.com/marcuschen",
-    instagram: "https://instagram.com/marcuschen.film",
-    linkedin: "https://linkedin.com/in/marcuschen",
-    youtube: "https://youtube.com/@marcuschen"
+    vimeo: "https://vimeo.com/samerhanna",
+    instagram: "https://instagram.com/samerhanna",
+    linkedin: "https://linkedin.com/in/samerhanna",
+    youtube: "https://youtube.com/@samerhanna"
   }
 };
 
