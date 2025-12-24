@@ -111,24 +111,10 @@ export const skills = [
 export const experience = [
   {
     id: 1,
-    role: "Lead Editor",
-    company: "Paramount Pictures",
-    period: "2021 - Present",
-    description: "Lead editor for theatrical trailers and promotional content."
-  },
-  {
-    id: 2,
-    role: "Senior Editor",
-    company: "Apple Creative",
-    period: "2019 - 2021",
-    description: "Created product launch videos and brand campaigns."
-  },
-  {
-    id: 3,
     role: "Video Editor",
-    company: "Red Bull Media House",
-    period: "2017 - 2019",
-    description: "Edited extreme sports documentaries and event coverage."
+    company: "Freelance",
+    period: "2024 - 2025",
+    description: "Professional video editing for commercials, documentaries, and narrative filmmaking."
   }
 ];
 
