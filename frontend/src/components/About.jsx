@@ -1,0 +1,170 @@
+import React, { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'framer-motion';
+import { Award, Briefcase } from 'lucide-react';
+import { editorProfile, skills, experience, awards } from '../data/mock';
+
+const About = () => {
+  const sectionRef = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: sectionRef,
+    offset: ['start end', 'end start']
+  });
+
+  const backgroundY = useTransform(scrollYProgress, [0, 1], [0, -200]);
+
+  return (
+    <section id="about" ref={sectionRef} className="relative bg-[#0a0a0a] py-32 overflow-hidden">
+      {/* Background Elements */}
+      <motion.div
+        style={{ y: backgroundY }}
+        className="absolute inset-0 pointer-events-none"
+      >
+        <div className="absolute top-1/4 -left-32 w-96 h-96 bg-amber-400/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-orange-500/5 rounded-full blur-3xl" />
+      </motion.div>
+
+      <div className="relative z-10 max-w-[1920px] mx-auto px-6 lg:px-12">
+        {/* Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="text-center mb-20"
+        >
+          <span className="text-amber-400 text-sm font-medium tracking-widest uppercase mb-4 block">
+            About Me
+          </span>
+          <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white tracking-tight mb-6">
+            The Story Behind the Cuts
+          </h2>
+          <p className="text-gray-400 max-w-2xl mx-auto text-lg leading-relaxed">
+            {editorProfile.bio}
+          </p>
+        </motion.div>
+
+        <div className="grid lg:grid-cols-2 gap-16">
+          {/* Left Column - Skills & Experience */}
+          <div className="space-y-12">
+            {/* Skills */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <h3 className="text-2xl font-display font-bold text-white mb-8 flex items-center gap-3">
+                <div className="w-10 h-10 rounded-lg bg-amber-400/10 flex items-center justify-center">
+                  <Briefcase className="w-5 h-5 text-amber-400" />
+                </div>
+                Technical Skills
+              </h3>
+              <div className="space-y-6">
+                {skills.map((skill, index) => (
+                  <motion.div
+                    key={skill.name}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                  >
+                    <div className="flex justify-between mb-2">
+                      <span className="text-gray-300 font-medium">{skill.name}</span>
+                      <span className="text-amber-400">{skill.level}%</span>
+                    </div>
+                    <div className="h-2 bg-white/5 rounded-full overflow-hidden">
+                      <motion.div
+                        initial={{ width: 0 }}
+                        whileInView={{ width: `${skill.level}%` }}
+                        viewport={{ once: true }}
+                        transition={{ duration: 1, delay: 0.2 + index * 0.1, ease: [0.25, 0.46, 0.45, 0.94] }}
+                        className="h-full bg-gradient-to-r from-amber-400 to-orange-500 rounded-full"
+                      />
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Awards */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              <h3 className="text-2xl font-display font-bold text-white mb-8 flex items-center gap-3">
+                <div className="w-10 h-10 rounded-lg bg-amber-400/10 flex items-center justify-center">
+                  <Award className="w-5 h-5 text-amber-400" />
+                </div>
+                Awards & Recognition
+              </h3>
+              <div className="grid grid-cols-2 gap-4">
+                {awards.map((award, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, scale: 0.9 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: index * 0.1 }}
+                    whileHover={{ scale: 1.03, backgroundColor: 'rgba(255,255,255,0.05)' }}
+                    className="p-6 rounded-xl border border-white/10 bg-white/[0.02] transition-all duration-300"
+                  >
+                    <div className="text-amber-400 text-sm font-medium mb-1">{award.year}</div>
+                    <div className="text-white font-semibold mb-1">{award.title}</div>
+                    <div className="text-gray-500 text-sm">{award.event}</div>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Right Column - Timeline Experience */}
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <h3 className="text-2xl font-display font-bold text-white mb-8">Experience Timeline</h3>
+            <div className="relative">
+              {/* Timeline Line */}
+              <div className="absolute left-6 top-0 bottom-0 w-px bg-gradient-to-b from-amber-400 via-amber-400/50 to-transparent" />
+
+              <div className="space-y-8">
+                {experience.map((exp, index) => (
+                  <motion.div
+                    key={exp.id}
+                    initial={{ opacity: 0, x: 30 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.6, delay: index * 0.15 }}
+                    className="relative pl-16"
+                  >
+                    {/* Timeline Dot */}
+                    <motion.div
+                      whileHover={{ scale: 1.2 }}
+                      className="absolute left-4 top-2 w-5 h-5 rounded-full bg-amber-400 border-4 border-[#0a0a0a]"
+                    />
+
+                    <div className="p-6 rounded-xl border border-white/10 bg-white/[0.02] hover:bg-white/[0.04] transition-colors duration-300">
+                      <div className="flex flex-wrap items-center gap-3 mb-3">
+                        <span className="text-amber-400 text-sm font-medium">{exp.period}</span>
+                        <span className="w-1.5 h-1.5 rounded-full bg-gray-600" />
+                        <span className="text-gray-400 text-sm">{exp.company}</span>
+                      </div>
+                      <h4 className="text-xl text-white font-semibold mb-2">{exp.role}</h4>
+                      <p className="text-gray-400 leading-relaxed">{exp.description}</p>
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default About;
