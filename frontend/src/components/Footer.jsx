@@ -1,7 +1,12 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Play, ArrowUp } from 'lucide-react';
+import { Play, ArrowUp, Instagram, Facebook } from 'lucide-react';
 import { editorProfile } from '../data/mock';
+
+const socialIcons = {
+  instagram: Instagram,
+  facebook: Facebook
+};
 
 const Footer = () => {
   const scrollToTop = () => {
@@ -39,19 +44,22 @@ const Footer = () => {
               {editorProfile.tagline}. Transforming raw footage into compelling visual narratives that captivate audiences worldwide.
             </p>
             <div className="flex gap-4">
-              {Object.entries(editorProfile.social).map(([platform, url]) => (
-                <motion.a
-                  key={platform}
-                  href={url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  whileHover={{ scale: 1.1, y: -2 }}
-                  whileTap={{ scale: 0.9 }}
-                  className="w-10 h-10 rounded-full border border-white/10 bg-white/[0.02] flex items-center justify-center text-gray-400 hover:text-amber-400 hover:border-amber-400/50 transition-all duration-300"
-                >
-                  <span className="text-xs font-medium uppercase">{platform.charAt(0)}</span>
-                </motion.a>
-              ))}
+              {Object.entries(editorProfile.social).map(([platform, url]) => {
+                const IconComponent = socialIcons[platform];
+                return (
+                  <motion.a
+                    key={platform}
+                    href={url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    whileHover={{ scale: 1.1, y: -2 }}
+                    whileTap={{ scale: 0.9 }}
+                    className="w-10 h-10 rounded-full border border-white/10 bg-white/[0.02] flex items-center justify-center text-gray-400 hover:text-amber-400 hover:border-amber-400/50 transition-all duration-300"
+                  >
+                    {IconComponent && <IconComponent className="w-5 h-5" />}
+                  </motion.a>
+                );
+              })}
             </div>
           </div>
 
