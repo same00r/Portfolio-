@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { Award, Briefcase } from 'lucide-react';
-import { editorProfile, skills, experience, awards } from '../data/mock';
+import { Briefcase } from 'lucide-react';
+import { editorProfile, skills, experience } from '../data/mock';
 
 const About = () => {
   const sectionRef = useRef(null);
@@ -38,14 +38,44 @@ const About = () => {
           <h2 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold text-white tracking-tight mb-6">
             The Story Behind the Cuts
           </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto text-lg leading-relaxed">
-            {editorProfile.bio}
-          </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-16">
-          {/* Left Column - Skills & Experience */}
-          <div className="space-y-12">
+        <div className="grid lg:grid-cols-3 gap-16">
+          {/* Left Column - Photo */}
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="flex justify-center lg:justify-start"
+          >
+            <div className="relative">
+              <div className="w-72 h-72 md:w-80 md:h-80 rounded-2xl overflow-hidden border-2 border-amber-400/20">
+                <img
+                  src={editorProfile.photo}
+                  alt={editorProfile.name}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              {/* Decorative elements */}
+              <div className="absolute -bottom-4 -right-4 w-72 h-72 md:w-80 md:h-80 rounded-2xl border border-amber-400/30 -z-10" />
+            </div>
+          </motion.div>
+
+          {/* Middle Column - Bio & Skills */}
+          <div className="space-y-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <h3 className="text-2xl font-display font-bold text-white mb-4">{editorProfile.name}</h3>
+              <p className="text-gray-400 leading-relaxed mb-6">
+                {editorProfile.bio}
+              </p>
+            </motion.div>
+
             {/* Skills */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
@@ -53,13 +83,13 @@ const About = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <h3 className="text-2xl font-display font-bold text-white mb-8 flex items-center gap-3">
+              <h3 className="text-xl font-display font-bold text-white mb-6 flex items-center gap-3">
                 <div className="w-10 h-10 rounded-lg bg-amber-400/10 flex items-center justify-center">
                   <Briefcase className="w-5 h-5 text-amber-400" />
                 </div>
                 Technical Skills
               </h3>
-              <div className="space-y-6">
+              <div className="space-y-5">
                 {skills.map((skill, index) => (
                   <motion.div
                     key={skill.name}
@@ -81,38 +111,6 @@ const About = () => {
                         className="h-full bg-gradient-to-r from-amber-400 to-orange-500 rounded-full"
                       />
                     </div>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
-
-            {/* Awards */}
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
-              <h3 className="text-2xl font-display font-bold text-white mb-8 flex items-center gap-3">
-                <div className="w-10 h-10 rounded-lg bg-amber-400/10 flex items-center justify-center">
-                  <Award className="w-5 h-5 text-amber-400" />
-                </div>
-                Awards & Recognition
-              </h3>
-              <div className="grid grid-cols-2 gap-4">
-                {awards.map((award, index) => (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, scale: 0.9 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                    whileHover={{ scale: 1.03, backgroundColor: 'rgba(255,255,255,0.05)' }}
-                    className="p-6 rounded-xl border border-white/10 bg-white/[0.02] transition-all duration-300"
-                  >
-                    <div className="text-amber-400 text-sm font-medium mb-1">{award.year}</div>
-                    <div className="text-white font-semibold mb-1">{award.title}</div>
-                    <div className="text-gray-500 text-sm">{award.event}</div>
                   </motion.div>
                 ))}
               </div>
