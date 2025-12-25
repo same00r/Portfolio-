@@ -8,11 +8,10 @@ export const editorProfile = {
   email: "samerhanna001@gmail.com",
   phone: "0991764695",
   location: "Syria",
+  photo: "https://customer-assets.emergentagent.com/job_vizstudio-3/artifacts/5wiatuoz_IMG_20251130_091203.jpg",
   social: {
-    vimeo: "https://vimeo.com/samerhanna",
-    instagram: "https://instagram.com/samerhanna",
-    linkedin: "https://linkedin.com/in/samerhanna",
-    youtube: "https://youtube.com/@samerhanna"
+    instagram: "https://www.instagram.com/samerrhanna_?igsh=dXY2Z3N1aDE4cG9v",
+    facebook: "https://www.facebook.com/samer.hanna.7503?mibextid=ZbWKwL"
   }
 };
 
