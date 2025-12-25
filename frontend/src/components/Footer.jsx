@@ -32,7 +32,7 @@ const Footer = () => {
                 <Play className="w-5 h-5 text-black fill-black" />
               </div>
               <span className="font-display text-xl tracking-tight text-white">
-                MARCUS<span className="text-amber-400">.</span>
+                SAMER<span className="text-amber-400">.</span>
               </span>
             </motion.a>
             <p className="text-gray-400 max-w-md leading-relaxed mb-6">
