@@ -156,16 +156,17 @@ const ProjectCard = ({ project, index }) => {
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.9 }}
               transition={{ duration: 0.4 }}
-              className="w-full max-w-5xl aspect-video rounded-2xl overflow-hidden"
+              className="w-full max-w-5xl aspect-video rounded-2xl overflow-hidden bg-black"
               onClick={(e) => e.stopPropagation()}
             >
-              <iframe
-                src={`${project.videoUrl}?autoplay=1`}
-                className="w-full h-full"
-                allow="autoplay; fullscreen"
-                allowFullScreen
-                title={project.title}
+              <video
+                src={project.videoUrl}
+                className="w-full h-full object-contain"
+                controls
+                autoPlay
+                playsInline
               />
+            </motion.div>
             </motion.div>
           </motion.div>
         )}
