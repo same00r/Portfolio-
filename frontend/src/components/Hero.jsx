@@ -56,7 +56,7 @@ const Hero = () => {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <span className="inline-block px-4 py-2 bg-amber-400/10 border border-amber-400/20 rounded-full text-amber-400 text-sm font-medium tracking-wide mb-6">
-                Video Editor & Motion Designer
+                Professional Video Editor
               </span>
             </motion.div>
 
