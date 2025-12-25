@@ -205,8 +205,9 @@ const Contact = () => {
                     >
                       {IconComponent && <IconComponent className="w-5 h-5" />}
                       {platform}
-                  </motion.a>
-                ))}
+                    </motion.a>
+                  );
+                })}
               </div>
             </div>
 
