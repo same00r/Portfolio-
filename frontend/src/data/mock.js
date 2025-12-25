@@ -27,7 +27,7 @@ export const projects = [
     thumbnail: "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=1200&h=800&fit=crop",
     videoUrl: "https://player.vimeo.com/video/76979871",
     color: "#FF6B35",
-    tags: ["Color Grading", "Motion Graphics", "Sound Design"]
+    tags: ["Color Grading", "VFX", "Sound Design"]
   },
   {
     id: 2,
@@ -44,55 +44,16 @@ export const projects = [
   },
   {
     id: 3,
-    title: "MERIDIAN",
-    subtitle: "Fashion Film",
-    category: "Fashion",
-    year: 2023,
-    duration: "4:15",
-    description: "Avant-garde fashion film for Vogue Italia. Experimental editing techniques blending reality with surrealism.",
-    thumbnail: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&h=800&fit=crop",
-    videoUrl: "https://player.vimeo.com/video/76979871",
-    color: "#9B59B6",
-    tags: ["Fashion", "VFX", "Experimental"]
-  },
-  {
-    id: 4,
     title: "PULSE",
     subtitle: "Music Video",
     category: "Music Video",
-    year: 2023,
+    year: 2024,
     duration: "3:45",
-    description: "Grammy-nominated music video featuring revolutionary visual effects and rhythmic editing synchronized to every beat.",
+    description: "Award-winning music video featuring revolutionary visual effects and rhythmic editing synchronized to every beat.",
     thumbnail: "https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?w=1200&h=800&fit=crop",
     videoUrl: "https://player.vimeo.com/video/76979871",
     color: "#E74C3C",
-    tags: ["Music Video", "VFX", "Motion Graphics"]
-  },
-  {
-    id: 5,
-    title: "AURORA",
-    subtitle: "Brand Story",
-    category: "Commercial",
-    year: 2023,
-    duration: "1:30",
-    description: "Emotional brand narrative for Tesla's sustainability initiative. Cinematic storytelling meets corporate messaging.",
-    thumbnail: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=1200&h=800&fit=crop",
-    videoUrl: "https://player.vimeo.com/video/76979871",
-    color: "#2ECC71",
-    tags: ["Brand Film", "Narrative", "Color Grading"]
-  },
-  {
-    id: 6,
-    title: "FRAGMENTS",
-    subtitle: "Short Film",
-    category: "Narrative",
-    year: 2022,
-    duration: "18:00",
-    description: "Award-winning short film exploring memory and loss. Selected for Sundance Film Festival.",
-    thumbnail: "https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=1200&h=800&fit=crop",
-    videoUrl: "https://player.vimeo.com/video/76979871",
-    color: "#3498DB",
-    tags: ["Short Film", "Narrative", "Sound Design"]
+    tags: ["Music Video", "VFX", "Color Grading"]
   }
 ];
 
