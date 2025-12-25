@@ -74,12 +74,7 @@ export const experience = [
   }
 ];
 
-export const awards = [
-  { title: "Best Editing", event: "Tribeca Film Festival", year: 2024 },
-  { title: "Gold Lion", event: "Cannes Lions", year: 2023 },
-  { title: "Emmy Nomination", event: "Outstanding Editing", year: 2023 },
-  { title: "Best Music Video", event: "MTV VMAs", year: 2022 }
-];
+export const awards = [];
 
 export const testimonials = [
   {
